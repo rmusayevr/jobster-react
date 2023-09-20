@@ -9,10 +9,10 @@ import PageBtnContainer from './PageBtnContainer';
 const JobsContainer = () => {
     const { jobs, isLoading, page, totalJobs, numOfPages, search, searchStatus, searchType, sort } = useSelector((state) => state.allJobs);
     const dispatch = useDispatch()
-
+    
     useEffect(() => {
         dispatch(getAllJobs())
-    }, [page, search, searchStatus, searchType, sort])
+    }, [dispatch, page, search, searchStatus, searchType, sort])
 
     if (isLoading) {
         return <Loading center />
